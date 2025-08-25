@@ -1,0 +1,149 @@
+﻿public class clsOrder
+{
+    #region Properties
+    public enum enMode { AddNew, Update }
+    private enMode _Mode = enMode.AddNew;
+    public int Id { get; set; }
+    public int CustomerID { get; set; }
+    public int UserID { get; set; }
+    public DateTime OrderDate { get; set; }
+    public DateTime RequiredDate { get; set; }
+    public DateTime? DeliveryDate { get; set; }
+    public byte Status { get; set; }
+    public decimal TotalAmount { get; set; }
+    public decimal InitialAmount { get; set; }
+    public decimal RemainingAmount { get; set; }
+    public DateTime? PaymentDate { get; set; }
+    public string? Notes { get; set; }
+    #endregion
+
+    #region Constructors
+    public clsOrder()
+    {
+        Id = -1;
+        CustomerID = -1;
+        UserID = -1;
+        OrderDate = DateTime.Now;
+        RequiredDate = DateTime.Now;
+        DeliveryDate = null;
+        Status = 0;
+        TotalAmount = 0;
+        InitialAmount = 0;
+        RemainingAmount = 0;
+        PaymentDate = null;
+        Notes = string.Empty;
+        _Mode = enMode.AddNew;
+    }
+    private clsOrder(clsOrderDTO orderDTO)
+    {
+        Id = orderDTO.Id;
+        CustomerID = orderDTO.CustomerID;
+        UserID = orderDTO.UserID;
+        OrderDate = orderDTO.OrderDate;
+        RequiredDate = orderDTO.RequiredDate;
+        DeliveryDate = orderDTO.DeliveryDate;
+        Status = orderDTO.Status;
+        TotalAmount = orderDTO.TotalAmount;
+        InitialAmount = orderDTO.InitialAmount;
+        RemainingAmount = orderDTO.RemainingAmount;
+        PaymentDate = orderDTO.PaymentDate;
+        Notes = orderDTO.Notes;
+        _Mode = enMode.Update;
+    }
+    #endregion
+
+    #region Public Methods
+    public bool Save()
+    {
+        clsOrderDTO orderDTO = new clsOrderDTO(
+            Id, CustomerID, UserID, OrderDate, RequiredDate, DeliveryDate, Status, TotalAmount, InitialAmount, RemainingAmount, PaymentDate, Notes
+        );
+        if (!_Validate())
+            return false;
+        if (_Mode == enMode.Update)
+        {
+            if (Id <= 0)
+                throw new InvalidOperationException("Cannot update an order with Id less than or equal to 0.");
+            return _Update(orderDTO);
+        }
+        else if (_Mode == enMode.AddNew)
+        {
+            return _AddNew(orderDTO);
+        }
+        return false;
+    }
+    #endregion
+
+    #region Static Methods
+    public static clsOrder? Find(int orderId)
+    {
+        if (orderId <= 0)
+            return null;
+        return _MapDTObjToOrder(clsOrderData.GetByID(orderId));
+    }
+    public static List<clsOrder> GetByCustomer(int customerId)
+    {
+        if (customerId <= 0)
+            return new List<clsOrder>();
+        return _MapDTObjListToOrderList(clsOrderData.GetByCustomerID(customerId));
+    }
+    public static bool Delete(int orderId)
+    {
+        if (orderId <= 0)
+            return false;
+        return clsOrderData.Delete(orderId);
+    }
+    #endregion
+
+    #region Private Methods
+    private bool _Validate()
+    {
+        if (CustomerID <= 0)
+            throw new InvalidOperationException("CustomerID must be greater than 0.");
+        if (UserID <= 0)
+            throw new InvalidOperationException("UserID must be greater than 0.");
+        if (OrderDate == default)
+            throw new InvalidOperationException("OrderDate is required.");
+        if (RequiredDate == default)
+            throw new InvalidOperationException("RequiredDate is required.");
+        if (TotalAmount < 0)
+            throw new InvalidOperationException("TotalAmount cannot be negative.");
+        if (InitialAmount < 0)
+            throw new InvalidOperationException("InitialAmount cannot be negative.");
+        if (RemainingAmount < 0)
+            throw new InvalidOperationException("RemainingAmount cannot be negative.");
+        return true;
+    }
+    private bool _Update(clsOrderDTO orderDTO)
+    {
+        if (_Mode != enMode.Update)
+            throw new InvalidOperationException("Cannot update an order that is not in Update mode.");
+        return clsOrderData.Update(orderDTO);
+    }
+    private bool _AddNew(clsOrderDTO orderDTO)
+    {
+        if (_Mode != enMode.AddNew)
+            throw new InvalidOperationException("Cannot add a new order that is not in AddNew mode.");
+        int? NewID = clsOrderData.AddNew(orderDTO);
+        if (NewID.HasValue && NewID.Value > 0)
+        {
+            Id = NewID.Value;
+            _Mode = enMode.Update;
+            return true;
+        }
+        return false;
+    }
+    private static clsOrder? _MapDTObjToOrder(clsOrderDTO? orderDTO)
+    {
+        if (orderDTO == null || orderDTO.Id < 0)
+            return null;
+        return new clsOrder(orderDTO);
+    }
+    private static List<clsOrder> _MapDTObjListToOrderList(List<clsOrderDTO> orderDTOs)
+    {
+        if (orderDTOs == null || orderDTOs.Count == 0)
+            return new List<clsOrder>();
+        return orderDTOs.Select(_MapDTObjToOrder).OfType<clsOrder>().ToList();
+    }
+    #endregion
+}

@@ -1,0 +1,85 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ABDELAZIZ\\.dotnet\\Windows Forms Projects\\TailorSoft_Solution\\TailorSoft\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{57054886-EA4F-44AC-95C9-AB61A38C1AE6}|TailorSoft.csproj|c:\\users\\abdelaziz\\.dotnet\\windows forms projects\\tailorsoft_solution\\tailorsoft\\order\\controls\\ucorderslistwithfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57054886-EA4F-44AC-95C9-AB61A38C1AE6}|TailorSoft.csproj|solutionrelative:order\\controls\\ucorderslistwithfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57054886-EA4F-44AC-95C9-AB61A38C1AE6}|TailorSoft.csproj|c:\\users\\abdelaziz\\.dotnet\\windows forms projects\\tailorsoft_solution\\tailorsoft\\order\\controls\\ucorderslistwithfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{57054886-EA4F-44AC-95C9-AB61A38C1AE6}|TailorSoft.csproj|solutionrelative:order\\controls\\ucorderslistwithfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 344,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ucOrdersListWithFilter.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ABDELAZIZ\\.dotnet\\Windows Forms Projects\\TailorSoft_Solution\\TailorSoft\\Order\\Controls\\ucOrdersListWithFilter.cs",
+              "RelativeDocumentMoniker": "Order\\Controls\\ucOrdersListWithFilter.cs",
+              "ToolTip": "C:\\Users\\ABDELAZIZ\\.dotnet\\Windows Forms Projects\\TailorSoft_Solution\\TailorSoft\\Order\\Controls\\ucOrdersListWithFilter.cs [Design]",
+              "RelativeToolTip": "Order\\Controls\\ucOrdersListWithFilter.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-22T06:53:19.211Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ucOrdersListWithFilter.cs",
+              "DocumentMoniker": "C:\\Users\\ABDELAZIZ\\.dotnet\\Windows Forms Projects\\TailorSoft_Solution\\TailorSoft\\Order\\Controls\\ucOrdersListWithFilter.cs",
+              "RelativeDocumentMoniker": "Order\\Controls\\ucOrdersListWithFilter.cs",
+              "ToolTip": "C:\\Users\\ABDELAZIZ\\.dotnet\\Windows Forms Projects\\TailorSoft_Solution\\TailorSoft\\Order\\Controls\\ucOrdersListWithFilter.cs",
+              "RelativeToolTip": "Order\\Controls\\ucOrdersListWithFilter.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAywDwAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-22T06:51:28.409Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        },
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

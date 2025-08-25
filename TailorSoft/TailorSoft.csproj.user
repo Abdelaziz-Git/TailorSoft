@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="CustomControls\CustomDataGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Customer\Controls\ucAddUpdateCustomer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Customer\Controls\ucCustomerCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Customer\Controls\ucCustomerCardWithFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Customer\Controls\ucCustomersList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Customer\Forms\frmAddUpdateCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Login\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="OrderItem\Controls\ucOrderItemList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="OrderItem\Forms\frmAddUpdateItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Order\Controls\ucAddUpdateOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Order\Controls\ucOrdersList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Order\Controls\ucOrdersListWithFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Order\Forms\frmAddOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Order\Forms\frmRecordPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Order\Forms\frmUpdateOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Product\Controls\ucAddUpdateProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Product\Controls\ucProductItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Product\Controls\ucProductList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Product\Controls\ucProductListWithFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Product\Forms\frmAddUpdateProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Product\Forms\frmProductCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Product\Forms\frmProductsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Product\Forms\frmSetSellingLength.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
