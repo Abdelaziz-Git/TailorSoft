@@ -1,5 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
 using TailorSoft_Data_Layer;
+using TailorSoft_Models;
 
 public class clsOrderData
 {
@@ -173,8 +174,6 @@ public class clsOrderData
     }
     public static bool RecordPayment(int orderID, decimal amount, DateTime paymentDate)
     {
-        if (amount < 0)
-            throw new ArgumentException("Amount must be greater than zero.", nameof(amount));
         SqlParameter[] parameters = new SqlParameter[]
         {
             new SqlParameter("@OrderID", orderID),
@@ -199,6 +198,48 @@ public class clsOrderData
     public static List<clsOrderDTO>GetByStatus(byte status)
     {
         return _ExecuteQueryToReadData("SP_Order_GetByStatus", new SqlParameter[] { new SqlParameter("@Status", status) });
+    }
+    public static List<clsOrderDTO> GetByCustomerPhone(string customerPhone)
+    {
+        return _ExecuteQueryToReadData("SP_Order_GetByCustomerPhone", new SqlParameter[] { new SqlParameter("@Phone", customerPhone) });
+    }
+    public static List<clsOrderDTO> GetByCustomerName(string customerName)
+    {
+        return _ExecuteQueryToReadData("SP_Order_GetByCustomerName", new SqlParameter[] { new SqlParameter("@Name", customerName) });
+    }
+    public static List<clsOrderStatisticsDTO> GetOrdersStatisticsForEachMonthByYear(int year)
+    {
+        var OrderStatistics = new List<clsOrderStatisticsDTO>();
+        try
+        {
+            using (SqlConnection conn = new SqlConnection(clsDatabaseSettings.DefaultConnection))
+            {
+                using (SqlCommand cmd = new SqlCommand("SP_Order_GetTotalIncomesAndNumberOfOrdersForEachMonth", conn))
+                {
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@Year", year));
+                    conn.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var MonthOrderStatistics = new clsOrderStatisticsDTO
+                            (
+                                reader.GetInt32(0),
+                                 reader.GetDecimal(1),
+                                reader.GetInt32(2)
+                            );
+                            OrderStatistics.Add(MonthOrderStatistics);
+                        }
+                    }
+                }
+            }
+            return OrderStatistics;
+        }
+        catch (Exception ex)
+        {
+            throw new Exception(ex.Message, ex);    
+        }
     }
 
     #endregion

@@ -1,4 +1,6 @@
 ﻿using TailorSoft_Business_Layer;
+using TailorSoft_Data_Layer;
+using TailorSoft_Models;
 
 public class clsOrder
 {
@@ -125,7 +127,7 @@ public class clsOrder
     }
     public static bool RecordPayment(int orderId, decimal amount)
     {
-        if (orderId <= 0 || amount < 0)
+        if (orderId <= 0)
             return false;
         return clsOrderData.RecordPayment(orderId, amount, DateTime.Now);
     }
@@ -145,6 +147,19 @@ public class clsOrder
     {
         return _MapDTObjListToOrderList(clsOrderData.GetByStatus(Status));
     }
+    public static List<clsOrder>GetByCustomerPhone(string CustomerPhone)
+    {
+        return _MapDTObjListToOrderList(clsOrderData.GetByCustomerPhone(CustomerPhone));
+    }
+    public static List<clsOrder>GetByCustomerName(string CustomerName)
+    {
+        return _MapDTObjListToOrderList(clsOrderData.GetByCustomerName(CustomerName));
+    }
+    public static List<clsOrderStatisticsDTO> GetOrdersStatisticsForEachMonthByYear(int year)
+    {
+        return clsOrderData.GetOrdersStatisticsForEachMonthByYear(year);
+    }
+
 
     #endregion
 

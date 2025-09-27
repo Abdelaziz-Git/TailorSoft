@@ -135,5 +135,10 @@ namespace TailorSoft.Customer.Controls
                 frm.ShowDialog();
             }
         }
+
+        private void ucCustomerCard1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

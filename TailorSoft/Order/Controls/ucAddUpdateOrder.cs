@@ -91,7 +91,7 @@ namespace TailorSoft.Order.Controls
             lblCustomerID.Text = _Order.CustomerID.ToString();
             dtpRequiredDate.Value = _Order.RequiredDate;
             cbOrderStatus.SelectedValue = _Order.Status;
-            txtNotes.Text = _Order.Notes ?? "لا توجد ملاحظات";
+            txtNotes.Text = _Order.Notes;
             lblInitialAmount.Text = $"{_Order.InitialAmount} درهم";
             lblRemainingAmount.Text = $"{_Order.RemainingAmount} درهم";
             lblTotalAmount.Text = $"{_Order.TotalAmount} درهم";

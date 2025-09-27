@@ -30,13 +30,15 @@ namespace TailorSoft
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             msMain = new MenuStrip();
+            tsmiDashbord = new ToolStripMenuItem();
             tsmiProducts = new ToolStripMenuItem();
             tsmiCustomers = new ToolStripMenuItem();
             tsmiOrders = new ToolStripMenuItem();
-            pictureBox1 = new PictureBox();
+            tsmiSettings = new ToolStripMenuItem();
+            tsmiEditStoreInfo = new ToolStripMenuItem();
             msMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // msMain
@@ -44,16 +46,29 @@ namespace TailorSoft
             msMain.AutoSize = false;
             msMain.BackColor = Color.WhiteSmoke;
             msMain.ImageScalingSize = new Size(40, 40);
-            msMain.Items.AddRange(new ToolStripItem[] { tsmiProducts, tsmiCustomers, tsmiOrders });
+            msMain.Items.AddRange(new ToolStripItem[] { tsmiDashbord, tsmiProducts, tsmiCustomers, tsmiOrders, tsmiSettings });
             msMain.LayoutStyle = ToolStripLayoutStyle.HorizontalStackWithOverflow;
             msMain.Location = new Point(0, 0);
             msMain.Name = "msMain";
             msMain.Padding = new Padding(251, 0, 0, 0);
             msMain.RenderMode = ToolStripRenderMode.Professional;
-            msMain.Size = new Size(1004, 60);
+            msMain.Size = new Size(1004, 79);
             msMain.TabIndex = 3;
             msMain.Text = "menuStrip1";
             msMain.SizeChanged += msMain_SizeChanged;
+            // 
+            // tsmiDashbord
+            // 
+            tsmiDashbord.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tsmiDashbord.Image = Resources.dashboard_32;
+            tsmiDashbord.ImageScaling = ToolStripItemImageScaling.None;
+            tsmiDashbord.Margin = new Padding(0, 0, 20, 0);
+            tsmiDashbord.Name = "tsmiDashbord";
+            tsmiDashbord.ShortcutKeys = Keys.Control | Keys.D3;
+            tsmiDashbord.Size = new Size(167, 79);
+            tsmiDashbord.Text = "الصفحة الرئيسية";
+            tsmiDashbord.TextImageRelation = TextImageRelation.ImageAboveText;
+            tsmiDashbord.Click += tsmiDashbord_Click;
             // 
             // tsmiProducts
             // 
@@ -65,8 +80,9 @@ namespace TailorSoft
             tsmiProducts.Name = "tsmiProducts";
             tsmiProducts.RightToLeft = RightToLeft.Yes;
             tsmiProducts.ShortcutKeys = Keys.Control | Keys.D1;
-            tsmiProducts.Size = new Size(131, 60);
+            tsmiProducts.Size = new Size(99, 79);
             tsmiProducts.Text = "المنتجات";
+            tsmiProducts.TextImageRelation = TextImageRelation.ImageAboveText;
             tsmiProducts.Click += tsmiProducts_Click;
             // 
             // tsmiCustomers
@@ -78,9 +94,10 @@ namespace TailorSoft
             tsmiCustomers.Margin = new Padding(0, 0, 20, 0);
             tsmiCustomers.Name = "tsmiCustomers";
             tsmiCustomers.RightToLeft = RightToLeft.Yes;
-            tsmiCustomers.ShortcutKeys = Keys.Control | Keys.D1;
-            tsmiCustomers.Size = new Size(114, 60);
+            tsmiCustomers.ShortcutKeys = Keys.Control | Keys.D2;
+            tsmiCustomers.Size = new Size(82, 79);
             tsmiCustomers.Text = "العملاء";
+            tsmiCustomers.TextImageRelation = TextImageRelation.ImageAboveText;
             tsmiCustomers.Click += tsmiCustomers_Click;
             // 
             // tsmiOrders
@@ -90,21 +107,37 @@ namespace TailorSoft
             tsmiOrders.ImageScaling = ToolStripItemImageScaling.None;
             tsmiOrders.Margin = new Padding(0, 0, 20, 0);
             tsmiOrders.Name = "tsmiOrders";
-            tsmiOrders.Size = new Size(113, 60);
+            tsmiOrders.ShortcutKeys = Keys.Control | Keys.D3;
+            tsmiOrders.Size = new Size(81, 79);
             tsmiOrders.Text = "طلبات";
-            tsmiOrders.TextImageRelation = TextImageRelation.TextBeforeImage;
+            tsmiOrders.TextImageRelation = TextImageRelation.ImageAboveText;
             tsmiOrders.Click += tsmiOrders_Click;
             // 
-            // pictureBox1
+            // tsmiSettings
             // 
-            pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Image = Resources.HFSMS_Logo;
-            pictureBox1.Location = new Point(0, 60);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1004, 510);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 5;
-            pictureBox1.TabStop = false;
+            tsmiSettings.BackColor = Color.Transparent;
+            tsmiSettings.DropDownItems.AddRange(new ToolStripItem[] { tsmiEditStoreInfo });
+            tsmiSettings.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tsmiSettings.Image = Resources.settings_icon_32;
+            tsmiSettings.ImageScaling = ToolStripItemImageScaling.None;
+            tsmiSettings.ImageTransparentColor = Color.White;
+            tsmiSettings.Margin = new Padding(0, 0, 20, 0);
+            tsmiSettings.Name = "tsmiSettings";
+            tsmiSettings.RightToLeft = RightToLeft.Yes;
+            tsmiSettings.ShortcutKeys = Keys.Control | Keys.A;
+            tsmiSettings.Size = new Size(105, 79);
+            tsmiSettings.Text = "الإعدادات";
+            tsmiSettings.TextImageRelation = TextImageRelation.ImageAboveText;
+            // 
+            // tsmiEditStoreInfo
+            // 
+            tsmiEditStoreInfo.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tsmiEditStoreInfo.Image = Resources.edit_icon_blue_32;
+            tsmiEditStoreInfo.ImageScaling = ToolStripItemImageScaling.None;
+            tsmiEditStoreInfo.Name = "tsmiEditStoreInfo";
+            tsmiEditStoreInfo.Size = new Size(274, 38);
+            tsmiEditStoreInfo.Text = "تعديل معلومات المحل";
+            tsmiEditStoreInfo.Click += tsmiEditStoreInfo_Click;
             // 
             // frmMain
             // 
@@ -112,19 +145,18 @@ namespace TailorSoft
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1004, 570);
-            Controls.Add(pictureBox1);
             Controls.Add(msMain);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             IsMdiContainer = true;
             MainMenuStrip = msMain;
             Name = "frmMain";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Main";
             WindowState = FormWindowState.Maximized;
             FormClosing += frmMain_FormClosing;
+            FormClosed += frmMain_FormClosed;
             SizeChanged += frmMain_SizeChanged;
             msMain.ResumeLayout(false);
             msMain.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -133,7 +165,9 @@ namespace TailorSoft
         private MenuStrip msMain;
         private ToolStripMenuItem tsmiProducts;
         private ToolStripMenuItem tsmiCustomers;
-        private PictureBox pictureBox1;
         private ToolStripMenuItem tsmiOrders;
+        private ToolStripMenuItem tsmiSettings;
+        private ToolStripMenuItem tsmiEditStoreInfo;
+        private ToolStripMenuItem tsmiDashbord;
     }
 }

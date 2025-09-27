@@ -32,6 +32,7 @@ namespace TailorSoft.OrderItem.Forms
             _Mode = enMode.AddNew;
             _OrderID = orderID;
             InitializeComponent();
+
         }
         /// <summary>
         /// Initializes a new instance of the <see cref="frmAddUpdateItem"/> form for updating an existing order item.
@@ -42,6 +43,7 @@ namespace TailorSoft.OrderItem.Forms
             _Mode = enMode.Update;
             _OrderItem = orderItem;
             InitializeComponent();
+
         }
 
         private bool CalculateTotalPrice()
@@ -152,6 +154,7 @@ namespace TailorSoft.OrderItem.Forms
                     this.Close();
                     return;
                 }
+                txtProductName.Select(); 
             }
             else if (_Mode == enMode.Update)
             {
@@ -166,7 +169,6 @@ namespace TailorSoft.OrderItem.Forms
                     return;
                 }
             }
-            
         }
         public bool IsValideInputs()
         {

@@ -44,7 +44,7 @@
             pnlSelectCustomer.Location = new Point(0, 0);
             pnlSelectCustomer.Name = "pnlSelectCustomer";
             pnlSelectCustomer.RightToLeft = RightToLeft.Yes;
-            pnlSelectCustomer.Size = new Size(1045, 687);
+            pnlSelectCustomer.Size = new Size(1146, 705);
             pnlSelectCustomer.TabIndex = 0;
             // 
             // btnNext
@@ -54,10 +54,10 @@
             btnNext.Font = new Font("Segoe UI Semibold", 15F, FontStyle.Bold);
             btnNext.Image = Properties.Resources.Next_Icon_White_32;
             btnNext.ImageAlign = ContentAlignment.MiddleRight;
-            btnNext.Location = new Point(426, 609);
+            btnNext.Location = new Point(462, 585);
             btnNext.Name = "btnNext";
             btnNext.Padding = new Padding(10, 0, 20, 0);
-            btnNext.Size = new Size(168, 51);
+            btnNext.Size = new Size(214, 71);
             btnNext.TabIndex = 19;
             btnNext.Text = "التالي";
             btnNext.TextAlign = ContentAlignment.MiddleLeft;
@@ -68,10 +68,10 @@
             // 
             ucCustomerCardWithFilter1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             ucCustomerCardWithFilter1.BackColor = Color.White;
-            ucCustomerCardWithFilter1.Location = new Point(21, 111);
+            ucCustomerCardWithFilter1.Location = new Point(36, 91);
             ucCustomerCardWithFilter1.Name = "ucCustomerCardWithFilter1";
             ucCustomerCardWithFilter1.RightToLeft = RightToLeft.Yes;
-            ucCustomerCardWithFilter1.Size = new Size(998, 470);
+            ucCustomerCardWithFilter1.Size = new Size(1070, 434);
             ucCustomerCardWithFilter1.TabIndex = 1;
             ucCustomerCardWithFilter1.OnCustomerSelected += ucCustomerCardWithFilter1_OnCustomerSelected;
             // 
@@ -80,21 +80,28 @@
             lblTitle.BackColor = Color.Gainsboro;
             lblTitle.Dock = DockStyle.Top;
             lblTitle.Font = new Font("Times New Roman", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTitle.ForeColor = Color.DeepSkyBlue;
             lblTitle.Location = new Point(0, 0);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(1045, 75);
+            lblTitle.Size = new Size(1146, 75);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "من فضلك, قم باختيار الزبون اولا.";
             lblTitle.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // frmAddOrder
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AcceptButton = btnNext;
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
+            AutoScroll = true;
             BackColor = Color.White;
-            ClientSize = new Size(1045, 687);
+            ClientSize = new Size(1146, 705);
             Controls.Add(pnlSelectCustomer);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "frmAddOrder";
+            RightToLeft = RightToLeft.Yes;
             StartPosition = FormStartPosition.CenterScreen;
             FormClosing += frmAddOrder_FormClosing;
             KeyPress += frmAddOrder_KeyPress;

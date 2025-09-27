@@ -37,7 +37,7 @@ namespace TailorSoft.Order.Forms
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if(decimal.TryParse(txtAmount.Text, out decimal amount) && amount > 0)
+            if(decimal.TryParse(txtAmount.Text, out decimal amount))
             {
                 // Assuming clsOrder has a method to record payment
                 bool success = clsOrder.RecordPayment(_orderID, amount);

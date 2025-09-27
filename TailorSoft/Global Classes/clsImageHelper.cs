@@ -125,7 +125,7 @@ namespace TailorSoft.Global_Classes
                     return new Bitmap(temp);
                 });
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return Resources.empty_image_icon_512; // return default image on error
             }

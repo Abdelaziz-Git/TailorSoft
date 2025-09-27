@@ -44,10 +44,10 @@ namespace TailorSoft.Product.Controls
         {
             cbFindBy.BeginUpdate();
             cbFindBy.Items.Clear();
-            cbFindBy.Items.Add("لا None");
-            cbFindBy.Items.Add("الرقم ID");
-            cbFindBy.Items.Add("الفئة Category");
-            cbFindBy.Items.Add("اللون Color");
+            cbFindBy.Items.Add("لا شيء");
+            cbFindBy.Items.Add("رقم المنتج");
+            cbFindBy.Items.Add("فئة المنتج");
+            cbFindBy.Items.Add("لون المنتج");
             cbFindBy.SelectedIndex = 0; // Default to "لا None"
             cbFindBy.EndUpdate();
         }
@@ -67,7 +67,8 @@ namespace TailorSoft.Product.Controls
             else
             {
                 cbFindBy.Enabled = true;
-                cbFindBy.SelectedIndex = 0; // Reset to "لا None"
+                if (cbFindBy.Items.Count > 0)
+                    cbFindBy.SelectedIndex = 0; // Reset to "لا None"
 
                 await ucProductList1.SetProductsAsync(clsProduct.GetProductsByTypeAsync(productType, token), token);
             }
@@ -81,7 +82,8 @@ namespace TailorSoft.Product.Controls
         private void ResetFilter()
         {
             txtSearch.Text = string.Empty;
-            cbFindBy.SelectedIndex = 0;
+            if (cbFindBy.Items.Count > 0)
+                cbFindBy.SelectedIndex = 0;
         }
         #endregion
 
@@ -128,7 +130,7 @@ namespace TailorSoft.Product.Controls
                 cbFindBy.Enabled = false;
                 try
                 {
-                    await ucProductList1.SetProductsAsync(clsProduct.GetAllActiveProductsAsync(token));
+                    await ucProductList1.SetProductsAsync(clsProduct.GetAllActiveProductsAsync(token),token);
                 }
                 catch (OperationCanceledException)
                 {
@@ -154,17 +156,17 @@ namespace TailorSoft.Product.Controls
 
                     case 2: // Category
                         await ucProductList1.SetProductsAsync(
-                            clsProduct.GetProductsByTypeIdAndCategoryAsync(productType, searchText));
+                            clsProduct.GetProductsByTypeIdAndCategoryAsync(productType, searchText),token);
                         break;
 
                     case 3: // Color
                         await ucProductList1.SetProductsAsync(
-                            clsProduct.GetProductsByTypeIdAndColorAsync(productType, searchText));
+                            clsProduct.GetProductsByTypeIdAndColorAsync(productType, searchText), token);
                         break;
 
                     default: // Type only
                         await ucProductList1.SetProductsAsync(
-                            clsProduct.GetProductsByTypeAsync(productType));
+                            clsProduct.GetProductsByTypeAsync(productType), token);
                         break;
                 }
             }

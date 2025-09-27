@@ -102,7 +102,7 @@ namespace TailorSoft.Customer.Controls
             };
             return Columns;
         }
-        private void LoadAndRefreshData()
+        public void LoadAndRefreshData()
         {
             dgvCustomersList?.Rows.Clear();
             foreach (var customer in clsCustomer.GetAll())

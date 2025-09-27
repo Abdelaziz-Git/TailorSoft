@@ -16,6 +16,7 @@ C:\Users\ABDELAZIZ\.dotnet\Windows Forms Projects\TailorSoft_Solution\Class Libr
 C:\Users\ABDELAZIZ\.dotnet\Windows Forms Projects\TailorSoft_Solution\Class Library\TailorSoft_Models\obj\Debug\net8.0\TailorSoft_Models.AssemblyInfoInputs.cache
 C:\Users\ABDELAZIZ\.dotnet\Windows Forms Projects\TailorSoft_Solution\Class Library\TailorSoft_Models\obj\Debug\net8.0\TailorSoft_Models.AssemblyInfo.cs
 C:\Users\ABDELAZIZ\.dotnet\Windows Forms Projects\TailorSoft_Solution\Class Library\TailorSoft_Models\obj\Debug\net8.0\TailorSoft_Models.csproj.CoreCompileInputs.cache
+C:\Users\ABDELAZIZ\.dotnet\Windows Forms Projects\TailorSoft_Solution\Class Library\TailorSoft_Models\obj\Debug\net8.0\TailorSoft_Models.sourcelink.json
 C:\Users\ABDELAZIZ\.dotnet\Windows Forms Projects\TailorSoft_Solution\Class Library\TailorSoft_Models\obj\Debug\net8.0\TailorSoft_Models.dll
 C:\Users\ABDELAZIZ\.dotnet\Windows Forms Projects\TailorSoft_Solution\Class Library\TailorSoft_Models\obj\Debug\net8.0\refint\TailorSoft_Models.dll
 C:\Users\ABDELAZIZ\.dotnet\Windows Forms Projects\TailorSoft_Solution\Class Library\TailorSoft_Models\obj\Debug\net8.0\TailorSoft_Models.pdb

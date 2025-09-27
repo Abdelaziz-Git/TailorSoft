@@ -89,13 +89,13 @@ namespace HFS.Product.Controls
                 _Mode = enMode.Update;
                 lblTitle.Text = "تحديث المنتج";
                 lblProductID.Text = Product?.Id.ToString();
-                cbProductType.SelectedIndex = Product.TypeID.GetValueOrDefault() - 1; // Assuming TypeID is 1-based index
-                txtProductCategory.Text = Product.Category;
-                txtProductColor.Text = Product.Color;
-                txtProductInitialLength.Text = Product.InitialLength?.ToString("0.00");
-                txtProductStockLength.Text = Product.StockLength?.ToString("0.00");
-                txtProductPrice.Text = Product.Price?.ToString("0.00");
-                pbProductImage.ImageLocation = Product.ImagePath != null && File.Exists(Product.ImagePath)
+                cbProductType.SelectedIndex = int.Parse(Product?.TypeID?.ToString() ?? "0") - 1; // Assuming TypeID is 1-based index
+                txtProductCategory.Text = Product?.Category;
+                txtProductColor.Text = Product?.Color;
+                txtProductInitialLength.Text = Product?.InitialLength?.ToString("0.00");
+                txtProductStockLength.Text = Product?.StockLength?.ToString("0.00");
+                txtProductPrice.Text = Product?.Price?.ToString("0.00");
+                pbProductImage.ImageLocation = Product?.ImagePath != null && File.Exists(Product.ImagePath)
                     ? Product.ImagePath
                     : string.Empty;
                 _pbProductImage = enPbProductImage.ProductImage;

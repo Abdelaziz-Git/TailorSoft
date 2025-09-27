@@ -6,6 +6,7 @@ using TailorSoft_Data_Layer;
 using TailorSoft.Customer.Forms;
 using TailorSoft;
 using TailorSoft.Order.Forms;
+using HFS;
 
 
 
@@ -27,11 +28,11 @@ namespace TailorSoft
                 .AddJsonFile("AppSettings\\appsettings.json", optional: false, reloadOnChange: true);
             Configuration = builder.Build();
             clsDatabaseSettings.DefaultConnection = Configuration?.GetSection("ConnectionStrings:DefaultConnection").Value ?? string.Empty;
-            clsDatabaseSettings.OnlineConnection = Configuration?.GetSection("ConnectionStrings:OnlineConnection").Value ?? string.Empty;
+
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new frmMain());
+            Application.Run(new frmLogin());
         }
     }
 }

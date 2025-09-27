@@ -31,19 +31,20 @@
             nudSellingLength = new NumericUpDown();
             btnClose = new Button();
             btnSave = new Button();
-            label1 = new Label();
+            lblTitle = new Label();
             ((System.ComponentModel.ISupportInitialize)nudSellingLength).BeginInit();
             SuspendLayout();
             // 
             // nudSellingLength
             // 
+            nudSellingLength.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             nudSellingLength.DecimalPlaces = 1;
             nudSellingLength.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             nudSellingLength.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
             nudSellingLength.Location = new Point(132, 76);
             nudSellingLength.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             nudSellingLength.Name = "nudSellingLength";
-            nudSellingLength.Size = new Size(141, 43);
+            nudSellingLength.Size = new Size(224, 43);
             nudSellingLength.TabIndex = 0;
             // 
             // btnClose
@@ -53,11 +54,11 @@
             btnClose.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnClose.Image = Properties.Resources.Close_icon_32;
             btnClose.ImageAlign = ContentAlignment.MiddleLeft;
-            btnClose.Location = new Point(71, 171);
+            btnClose.Location = new Point(63, 171);
             btnClose.Name = "btnClose";
             btnClose.Padding = new Padding(5);
             btnClose.RightToLeft = RightToLeft.Yes;
-            btnClose.Size = new Size(109, 51);
+            btnClose.Size = new Size(117, 51);
             btnClose.TabIndex = 19;
             btnClose.Text = "إغلاق";
             btnClose.TextAlign = ContentAlignment.MiddleRight;
@@ -71,48 +72,50 @@
             btnSave.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSave.Image = Properties.Resources.Save_icon_32;
             btnSave.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSave.Location = new Point(202, 171);
+            btnSave.Location = new Point(301, 171);
             btnSave.Name = "btnSave";
             btnSave.Padding = new Padding(5);
             btnSave.RightToLeft = RightToLeft.Yes;
-            btnSave.Size = new Size(109, 51);
+            btnSave.Size = new Size(117, 51);
             btnSave.TabIndex = 20;
             btnSave.Text = "تأكيد";
             btnSave.TextAlign = ContentAlignment.MiddleRight;
             btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
             // 
-            // label1
+            // lblTitle
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Times New Roman", 14.25F, FontStyle.Underline, GraphicsUnit.Point, 178);
-            label1.ForeColor = Color.DimGray;
-            label1.Location = new Point(71, 18);
-            label1.Name = "label1";
-            label1.RightToLeft = RightToLeft.Yes;
-            label1.Size = new Size(262, 21);
-            label1.TabIndex = 21;
-            label1.Text = "أكتب الطول الذي تريد بيعه من هذا الثوب:";
+            lblTitle.BackColor = Color.Firebrick;
+            lblTitle.Dock = DockStyle.Top;
+            lblTitle.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 178);
+            lblTitle.ForeColor = Color.Transparent;
+            lblTitle.Location = new Point(0, 0);
+            lblTitle.Name = "lblTitle";
+            lblTitle.RightToLeft = RightToLeft.Yes;
+            lblTitle.Size = new Size(492, 59);
+            lblTitle.TabIndex = 21;
+            lblTitle.Text = "أكتب الطول الذي تريد بيعه من هذا الثوب:";
+            lblTitle.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // frmSetSellingLength
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(404, 234);
-            Controls.Add(label1);
+            ClientSize = new Size(492, 234);
+            Controls.Add(lblTitle);
             Controls.Add(btnClose);
             Controls.Add(btnSave);
             Controls.Add(nudSellingLength);
-            FormBorderStyle = FormBorderStyle.Fixed3D;
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "frmSetSellingLength";
+            RightToLeft = RightToLeft.Yes;
             StartPosition = FormStartPosition.CenterScreen;
             Load += frmSetSellingLength_Load;
             ((System.ComponentModel.ISupportInitialize)nudSellingLength).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -120,6 +123,6 @@
         private NumericUpDown nudSellingLength;
         private Button btnClose;
         private Button btnSave;
-        private Label label1;
+        private Label lblTitle;
     }
 }

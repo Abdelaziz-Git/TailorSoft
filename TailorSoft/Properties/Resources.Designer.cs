@@ -22,7 +22,7 @@ namespace TailorSoft.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace TailorSoft.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("TailorSoft.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace TailorSoft.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace TailorSoft.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap add_icon_32 {
+        public static System.Drawing.Bitmap add_icon_32 {
             get {
                 object obj = ResourceManager.GetObject("add icon 32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -73,7 +73,7 @@ namespace TailorSoft.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Buy_Product_icon_32 {
+        public static System.Drawing.Bitmap Buy_Product_icon_32 {
             get {
                 object obj = ResourceManager.GetObject("Buy Product icon 32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -83,7 +83,7 @@ namespace TailorSoft.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap cash_payment_icon_32 {
+        public static System.Drawing.Bitmap cash_payment_icon_32 {
             get {
                 object obj = ResourceManager.GetObject("cash payment icon 32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -93,7 +93,7 @@ namespace TailorSoft.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Close_icon_32 {
+        public static System.Drawing.Bitmap Close_icon_32 {
             get {
                 object obj = ResourceManager.GetObject("Close icon 32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -103,7 +103,7 @@ namespace TailorSoft.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Customers_32 {
+        public static System.Drawing.Bitmap Customers_32 {
             get {
                 object obj = ResourceManager.GetObject("Customers_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -113,7 +113,27 @@ namespace TailorSoft.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Delete_icon_32 {
+        public static System.Drawing.Bitmap customers_64 {
+            get {
+                object obj = ResourceManager.GetObject("customers 64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap dashboard_32 {
+            get {
+                object obj = ResourceManager.GetObject("dashboard 32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Delete_icon_32 {
             get {
                 object obj = ResourceManager.GetObject("Delete icon 32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -123,7 +143,7 @@ namespace TailorSoft.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap delete_icon_red_32 {
+        public static System.Drawing.Bitmap delete_icon_red_32 {
             get {
                 object obj = ResourceManager.GetObject("delete icon red 32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -133,7 +153,7 @@ namespace TailorSoft.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap edit_icon_32 {
+        public static System.Drawing.Bitmap edit_icon_32 {
             get {
                 object obj = ResourceManager.GetObject("edit icon 32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -143,7 +163,7 @@ namespace TailorSoft.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap edit_icon_blue_32 {
+        public static System.Drawing.Bitmap edit_icon_blue_32 {
             get {
                 object obj = ResourceManager.GetObject("edit icon blue 32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -153,7 +173,7 @@ namespace TailorSoft.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap empty_image_icon_512 {
+        public static System.Drawing.Bitmap empty_image_icon_512 {
             get {
                 object obj = ResourceManager.GetObject("empty image icon 512", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -163,7 +183,7 @@ namespace TailorSoft.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap HFSMS_Logo {
+        public static System.Drawing.Bitmap HFSMS_Logo {
             get {
                 object obj = ResourceManager.GetObject("HFSMS Logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -173,7 +193,7 @@ namespace TailorSoft.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icon_search_32 {
+        public static System.Drawing.Bitmap icon_search_32 {
             get {
                 object obj = ResourceManager.GetObject("icon search 32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -183,7 +203,17 @@ namespace TailorSoft.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Next_Icon_White_32 {
+        public static System.Drawing.Bitmap Incom_64 {
+            get {
+                object obj = ResourceManager.GetObject("Incom 64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Next_Icon_White_32 {
             get {
                 object obj = ResourceManager.GetObject("Next Icon White 32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -193,7 +223,7 @@ namespace TailorSoft.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap order_32 {
+        public static System.Drawing.Bitmap order_32 {
             get {
                 object obj = ResourceManager.GetObject("order-32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -203,7 +233,17 @@ namespace TailorSoft.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap printer_icon_32 {
+        public static System.Drawing.Bitmap Password_icon_24 {
+            get {
+                object obj = ResourceManager.GetObject("Password icon 24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap printer_icon_32 {
             get {
                 object obj = ResourceManager.GetObject("printer icon 32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -213,7 +253,7 @@ namespace TailorSoft.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Products_icon_32 {
+        public static System.Drawing.Bitmap Products_icon_32 {
             get {
                 object obj = ResourceManager.GetObject("Products icon 32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -223,7 +263,17 @@ namespace TailorSoft.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Sale_Product_Icon {
+        public static System.Drawing.Bitmap Refresh_icon_32 {
+            get {
+                object obj = ResourceManager.GetObject("Refresh icon 32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Sale_Product_Icon {
             get {
                 object obj = ResourceManager.GetObject("Sale Product Icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -233,7 +283,17 @@ namespace TailorSoft.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Save_icon_32 {
+        public static System.Drawing.Bitmap sales_64 {
+            get {
+                object obj = ResourceManager.GetObject("sales-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Save_icon_32 {
             get {
                 object obj = ResourceManager.GetObject("Save icon 32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -243,9 +303,49 @@ namespace TailorSoft.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap sell_icon {
+        public static System.Drawing.Bitmap sell_icon {
             get {
                 object obj = ResourceManager.GetObject("sell icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap settings_icon_32 {
+            get {
+                object obj = ResourceManager.GetObject("settings icon 32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap stock_64 {
+            get {
+                object obj = ResourceManager.GetObject("stock 64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap user_icon_24 {
+            get {
+                object obj = ResourceManager.GetObject("user icon 24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap مفروشات_منزلية {
+            get {
+                object obj = ResourceManager.GetObject("مفروشات منزلية", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

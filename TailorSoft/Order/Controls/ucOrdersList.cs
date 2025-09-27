@@ -2,6 +2,7 @@
 using System.Media;
 using TailorSoft.Order.Classes;
 using TailorSoft.Order.Forms;
+using TailorSoft.Store.Classes;
 using WinFormsControlsLibrary;
 using static clsOrder;
 
@@ -226,7 +227,7 @@ namespace TailorSoft.Order.Controls
             this.OnOrdersCountChanged?.Invoke(dgvOrdersLis.Rows.Count);
             
         }
-        public void SetOrder(clsOrder order)
+        public void SetOrder(clsOrder? order)
         {
             dgvOrdersLis.Rows.Clear();
             if(order != null)
@@ -366,7 +367,7 @@ namespace TailorSoft.Order.Controls
                     MessageBox.Show("رقم الطلب خطا");
                 }
             }
-            else if (cashPaymentIcon.Contains(mouse))
+            else if (cashPaymentIcon.Contains(mouse))  
             {
                 if (int.TryParse(dgvOrdersLis.Rows[e.RowIndex].Cells["clmnID"].Value?.ToString(), out int orderID))
                 {
@@ -402,7 +403,7 @@ namespace TailorSoft.Order.Controls
                     }
 
                     clsOrderPrinter printer = new clsOrderPrinter
-                        (logoPath: "C:\\Users\\ABDELAZIZ\\OneDrive\\Pictures\\HFS Icons\\sewing-machine.png");
+                        (logoPath: clsStore.Load().LogoImagePath);
                     printer.Preview(order); // Assuming 80mm paper width and no specific printer
                 }
                 else

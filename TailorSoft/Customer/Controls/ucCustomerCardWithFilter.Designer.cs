@@ -40,13 +40,14 @@
             // 
             // ucCustomerCard1
             // 
-            ucCustomerCard1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            ucCustomerCard1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             ucCustomerCard1.BackColor = Color.White;
-            ucCustomerCard1.Location = new Point(7, 96);
+            ucCustomerCard1.Location = new Point(7, 93);
             ucCustomerCard1.Name = "ucCustomerCard1";
             ucCustomerCard1.RightToLeft = RightToLeft.Yes;
-            ucCustomerCard1.Size = new Size(767, 389);
+            ucCustomerCard1.Size = new Size(811, 339);
             ucCustomerCard1.TabIndex = 0;
+            ucCustomerCard1.Load += ucCustomerCard1_Load;
             // 
             // txtSearch
             // 
@@ -56,7 +57,7 @@
             txtSearch.Name = "txtSearch";
             txtSearch.PlaceholderText = "ابحث ...";
             txtSearch.RightToLeft = RightToLeft.Yes;
-            txtSearch.Size = new Size(337, 29);
+            txtSearch.Size = new Size(381, 29);
             txtSearch.TabIndex = 0;
             // 
             // cbFindBy
@@ -67,7 +68,7 @@
             cbFindBy.Font = new Font("Times New Roman", 11.25F);
             cbFindBy.FormattingEnabled = true;
             cbFindBy.Items.AddRange(new object[] { "رقم الهاتف", "رقم الزبون" });
-            cbFindBy.Location = new Point(439, 35);
+            cbFindBy.Location = new Point(483, 35);
             cbFindBy.Name = "cbFindBy";
             cbFindBy.RightToLeft = RightToLeft.Yes;
             cbFindBy.Size = new Size(153, 25);
@@ -79,7 +80,7 @@
             label2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label2.AutoSize = true;
             label2.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(598, 38);
+            label2.Location = new Point(642, 38);
             label2.Name = "label2";
             label2.RightToLeft = RightToLeft.Yes;
             label2.Size = new Size(58, 19);
@@ -95,7 +96,7 @@
             gbFilter.Controls.Add(cbFindBy);
             gbFilter.Location = new Point(112, -1);
             gbFilter.Name = "gbFilter";
-            gbFilter.Size = new Size(662, 90);
+            gbFilter.Size = new Size(706, 90);
             gbFilter.TabIndex = 18;
             gbFilter.TabStop = false;
             // 
@@ -137,7 +138,7 @@
             Controls.Add(ucCustomerCard1);
             Name = "ucCustomerCardWithFilter";
             RightToLeft = RightToLeft.Yes;
-            Size = new Size(777, 491);
+            Size = new Size(821, 439);
             Load += ucCustomerCardWithFilter_Load;
             gbFilter.ResumeLayout(false);
             gbFilter.PerformLayout();

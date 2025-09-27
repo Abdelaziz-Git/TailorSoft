@@ -1,19 +1,10 @@
-﻿using HFS.Product.Forms;
-using TailorSoft_Business_Layer;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using TailorSoft.Product.Forms;
-using TailorSoft.Product.Controls;
+﻿
+using HFS;
 using TailorSoft.Customer.Controls;
+using TailorSoft.Dashbord.Controls;
 using TailorSoft.Order.Controls;
-using System.Diagnostics;
+using TailorSoft.Product.Controls;
+using TailorSoft.Store.Forms;
 
 namespace TailorSoft
 {
@@ -23,19 +14,32 @@ namespace TailorSoft
         private ucProductListWithFilter? _ucProductListWithFilter1;
         private ucCustomersList? _ucCustomersList1;
         private ucOrdersListWithFilter? _ucOrdersList1;
-
+        private ucDashbord? _ucDashbord;
 
         public frmMain()
         {
             InitializeComponent();
+            tsmiDashbord_Click(null, null);
         }
 
         // Methods
+        private void InitializeDashbord()
+        {
+            _ucDashbord = new ucDashbord();
+            _ucDashbord.Location = new Point(0, _MenuHeight);
+            //_ucOrdersList1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            _ucDashbord.Dock = DockStyle.Fill;
+            _ucDashbord.Size = new Size(this.ClientSize.Width, this.ClientSize.Height - _MenuHeight);
+            _ucDashbord.BackColor = Color.White;
+            _ucDashbord.BorderStyle = BorderStyle.FixedSingle;
+            this.Controls.Add(_ucDashbord);
+        }
         private void InitializeUcProductListWithFilter()
         {
             _ucProductListWithFilter1 = new ucProductListWithFilter();
             _ucProductListWithFilter1.Location = new Point(0, _MenuHeight);
-            _ucProductListWithFilter1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            //_ucProductListWithFilter1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            _ucProductListWithFilter1.Dock = DockStyle.Fill;
             _ucProductListWithFilter1.Size = new Size(this.ClientSize.Width, this.ClientSize.Height - _MenuHeight);
             _ucProductListWithFilter1.BackColor = Color.White;
             _ucProductListWithFilter1.BorderStyle = BorderStyle.FixedSingle;
@@ -45,7 +49,8 @@ namespace TailorSoft
         {
             _ucCustomersList1 = new ucCustomersList();
             _ucCustomersList1.Location = new Point(0, _MenuHeight);
-            _ucCustomersList1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            //_ucCustomersList1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            _ucCustomersList1.Dock = DockStyle.Fill;
             _ucCustomersList1.Size = new Size(this.ClientSize.Width, this.ClientSize.Height - _MenuHeight);
             _ucCustomersList1.BackColor = Color.White;
             _ucCustomersList1.BorderStyle = BorderStyle.FixedSingle;
@@ -55,7 +60,8 @@ namespace TailorSoft
         {
             _ucOrdersList1 = new ucOrdersListWithFilter();
             _ucOrdersList1.Location = new Point(0, _MenuHeight);
-            _ucOrdersList1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            //_ucOrdersList1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            _ucOrdersList1.Dock = DockStyle.Fill;
             _ucOrdersList1.Size = new Size(this.ClientSize.Width, this.ClientSize.Height - _MenuHeight);
             _ucOrdersList1.BackColor = Color.White;
             _ucOrdersList1.BorderStyle = BorderStyle.FixedSingle;
@@ -67,6 +73,7 @@ namespace TailorSoft
             if (_ucProductListWithFilter1 == null)
             {
                 InitializeUcProductListWithFilter();
+                _ucProductListWithFilter1?.BringToFront();
             }
             else
             {
@@ -79,10 +86,12 @@ namespace TailorSoft
             if (_ucCustomersList1 == null)
             {
                 InitializeUcCustomersList();
+                _ucCustomersList1?.BringToFront();
             }
             else
             {
                 _ucCustomersList1.BringToFront();
+                _ucCustomersList1.LoadAndRefreshData();
             }
         }
 
@@ -103,6 +112,7 @@ namespace TailorSoft
             if (_ucOrdersList1 == null)
             {
                 InitializeUcOrdersList();
+                _ucOrdersList1?.BringToFront();
             }
             else
             {
@@ -131,6 +141,33 @@ namespace TailorSoft
             {
                 MessageBox.Show($"Error while closing the form: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void tsmiEditStoreInfo_Click(object sender, EventArgs e)
+        {
+            using (frmUpdateStoreInfo frm = new frmUpdateStoreInfo())
+            {
+                frm.ShowDialog();
+            }
+        }
+
+        private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+        }
+
+        private void tsmiDashbord_Click(object sender, EventArgs e)
+        {
+            if (_ucDashbord == null)
+            {
+                InitializeDashbord();
+                _ucDashbord?.BringToFront();
+            }
+            else
+            {
+                _ucDashbord.BringToFront();
+                _ucDashbord.RefreshData();
+            }
+            
         }
     }
 }

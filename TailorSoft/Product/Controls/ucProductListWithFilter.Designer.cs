@@ -73,7 +73,6 @@
             cbFindBy.AutoCompleteSource = AutoCompleteSource.ListItems;
             cbFindBy.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbFindBy.FormattingEnabled = true;
-            cbFindBy.Items.AddRange(new object[] { "لا (Non)", "الفئة", "اللون" });
             cbFindBy.Location = new Point(722, 73);
             cbFindBy.Name = "cbFindBy";
             cbFindBy.RightToLeft = RightToLeft.Yes;

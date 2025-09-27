@@ -65,6 +65,10 @@
             "Microsoft.Extensions.Configuration.Json": {
               "target": "Package",
               "version": "[9.0.5, )"
+            },
+            "WinForms.DataVisualization": {
+              "target": "Package",
+              "version": "[1.10.0, )"
             }
           },
           "imports": [

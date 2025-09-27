@@ -30,11 +30,13 @@ namespace TailorSoft.Product.Forms
             if(_productToSell.StockLength <= 0)
             {
                 MessageBox.Show("لا يوجد طول متاح للبيع", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                nudSellingLength.ResetText();
                 return;
             }
             if(_productToSell.StockLength < (double)nudSellingLength.Value)
             {
                 MessageBox.Show("الطول المطلوب للبيع أكبر من الطول المتاح", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                nudSellingLength.ResetText();
                 return;
             }
             if(_productToSell.Sell((double)nudSellingLength.Value))
@@ -46,6 +48,7 @@ namespace TailorSoft.Product.Forms
             else
             {
                 MessageBox.Show("حدث خطأ أثناء خصم الطول", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                nudSellingLength.ResetText();
             }
         }
         private void frmSetSellingLength_Load(object sender, EventArgs e)
@@ -56,6 +59,8 @@ namespace TailorSoft.Product.Forms
                 this.Close();
                 return;
             }
+            lblTitle.Text = $"أكتب الطول بالمتر الذي تريد بيعه من الثوب رقم {_productToSell.Id}";
+            nudSellingLength.ResetText();
         }
         private void btnSave_Click(object sender, EventArgs e)
         {

@@ -17,7 +17,7 @@ namespace TailorSoft.Order.Forms
     public partial class frmAddOrder : Form
     {
         public event Action<clsOrder>? OnOrderSavedSuccessfully;
-        private ucAddUpdateOrder? _ucAddUpdateOrder1;
+        private ucAddUpdateOrder _ucAddUpdateOrder1 = new ucAddUpdateOrder();
         private clsOrder? _Order = null;
         private clsCustomer? _Customer = null;
         private bool _IsUserSavingOrder = false;
@@ -32,9 +32,6 @@ namespace TailorSoft.Order.Forms
         }
         private void InitializeUcAddUpdateOrder()
         {
-            if (_ucAddUpdateOrder1 == null)
-                _ucAddUpdateOrder1 = new ucAddUpdateOrder();
-
             _ucAddUpdateOrder1.Dock = DockStyle.Fill;
             _ucAddUpdateOrder1.Visible = false;
             // Subscribe to events
@@ -90,7 +87,7 @@ namespace TailorSoft.Order.Forms
         }
         private void frmAddOrder_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (!_IsUserSavingOrder&&_ucAddUpdateOrder1.Visible)
+            if (!_IsUserSavingOrder&&_ucAddUpdateOrder1.Visible==true)
             {
                 if(MessageBox.Show("هل تريد الخروج بدون حفظ الطلب؟", "تحذير", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
                 {

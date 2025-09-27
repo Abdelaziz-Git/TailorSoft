@@ -185,10 +185,17 @@ namespace TailorSoft.Product.Controls
                     product?.ProductType?.Name,
                     product?.Category,
                     product?.Color,
-                    product?.InitialLength,
-                    product?.StockLength,
-                    product?.Price,
-                    product?.CreatedDate?.ToString("yyyy-MM-dd"),
+
+                    (product?.InitialLength % 1 == 0 ? 
+                    product?.InitialLength?.ToString("F0") : product?.InitialLength?.ToString("F1")) + " متر",
+
+                    (product?.StockLength % 1 == 0 ?
+                    product?.StockLength?.ToString("F0") : product?.StockLength?.ToString("F1")) + " متر",
+
+                    (product?.Price % 1 == 0 ? 
+                    product?.Price?.ToString("F0") : product?.Price?.ToString("F1")) + " درهم",
+
+                    product?.CreatedDate?.ToString("dd-MM-yyyy"),
                     ""); // Actions column will be handled in CellPainting
             }
             this.OnProductItemsCountChanged?.Invoke(dgvProductsList.Rows.Count);
@@ -209,15 +216,15 @@ namespace TailorSoft.Product.Controls
                 token.ThrowIfCancellationRequested();
 
                 dgvProductsList.Rows.Add(
-                    product.Id,
-                    image,
+                    product?.Id,
+                    await clsImageHelper.GetImageAsync(product?.ImagePath ?? ""),
                     product?.ProductType?.Name,
                     product?.Category,
                     product?.Color,
-                    product?.InitialLength,
-                    product?.StockLength,
-                    product?.Price,
-                    product?.CreatedDate?.ToString("yyyy-MM-dd"),
+                    (product?.InitialLength % 1 == 0 ? product?.InitialLength?.ToString("F0") : product?.InitialLength?.ToString("F1")) + " متر",
+                    (product?.StockLength % 1 == 0 ? product?.StockLength?.ToString("F0") : product?.StockLength?.ToString("F1")) + " متر",
+                    (product?.Price % 1 == 0 ? product?.Price?.ToString("F0") : product?.Price?.ToString("F1")) + " درهم",
+                    product?.CreatedDate?.ToString("dd-MM-yyyy"),
                     ""); // Actions column will be handled in CellPainting
             }
 
@@ -238,7 +245,7 @@ namespace TailorSoft.Product.Controls
                     product?.InitialLength,
                     product?.StockLength,
                     product?.Price,
-                    product?.CreatedDate?.ToString("yyyy-MM-dd"),
+                    product?.CreatedDate?.ToString("dd-MM-yyyy"),
                     ""); // Actions column will be handled in CellPainting
             this.OnProductItemsCountChanged?.Invoke(dgvProductsList.Rows.Count);
         }
@@ -306,15 +313,23 @@ namespace TailorSoft.Product.Controls
                             if (product != null)
                             {
                                 // Update the product in the DataGridView
-                                dgvProductsList.Rows[e.RowIndex].Cells["clmnID"].Value = product.Id;
                                 dgvProductsList.Rows[e.RowIndex].Cells["clmnImage"].Value = clsImageHelper.GetImage(product.ImagePath ?? "");
                                 dgvProductsList.Rows[e.RowIndex].Cells["clmnType"].Value = product.ProductType?.Name;
                                 dgvProductsList.Rows[e.RowIndex].Cells["clmnCategory"].Value = product.Category;
                                 dgvProductsList.Rows[e.RowIndex].Cells["clmnColor"].Value = product.Color;
-                                dgvProductsList.Rows[e.RowIndex].Cells["clmnInitialLength"].Value = product?.InitialLength;
-                                dgvProductsList.Rows[e.RowIndex].Cells["clmnStockLength"].Value = product?.StockLength;
-                                dgvProductsList.Rows[e.RowIndex].Cells["clmnPrice"].Value = product?.Price;
-                                dgvProductsList.Rows[e.RowIndex].Cells["clmnCreatedDate"].Value = product?.CreatedDate?.ToString("yyyy-MM-dd");
+
+                                dgvProductsList.Rows[e.RowIndex].Cells["clmnInitialLength"].Value =
+                                (product?.InitialLength % 1 == 0 ?
+                                product?.InitialLength?.ToString("F0") : product?.InitialLength?.ToString("F1")) + " متر";
+
+                                dgvProductsList.Rows[e.RowIndex].Cells["clmnStockLength"].Value =
+                                (product?.StockLength % 1 == 0 ?
+                                product?.StockLength?.ToString("F0") : product?.StockLength?.ToString("F1")) + " متر";
+
+                                dgvProductsList.Rows[e.RowIndex].Cells["clmnPrice"].Value =
+                                (product?.Price % 1 == 0 ?
+                                product?.Price?.ToString("F0") : product?.Price?.ToString("F1")) + " درهم";
+
                             }
                         };
                         editForm.ShowDialog();
@@ -330,11 +345,12 @@ namespace TailorSoft.Product.Controls
                 if (dgvProductsList.Rows.Count == 0 || e.RowIndex < 0)
                 {
                     MessageBox.Show("لا يوجد منتجات لحذفهم.", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                if (MessageBox.Show("هل أنت متأكد من حذف هذا المنتج؟", "تأكيد الحذف", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
-                {
                     return;
                 }
+
+                if (MessageBox.Show("هل أنت متأكد من حذف هذا المنتج؟", "تأكيد الحذف", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                    return;
+
                 if (int.TryParse(dgvProductsList.Rows[e.RowIndex].Cells["clmnID"].Value?.ToString(), out int productID))
                 {
                     if (productID >= 1)
@@ -387,7 +403,8 @@ namespace TailorSoft.Product.Controls
                             {
                                 // Update the product in the DataGridView
 
-                                dgvProductsList.Rows[e.RowIndex].Cells["clmnStockLength"].Value = product.StockLength;
+                                dgvProductsList.Rows[e.RowIndex].Cells["clmnStockLength"].Value = (product?.StockLength % 1 == 0 ?
+                                product?.StockLength?.ToString("F0") : product?.StockLength?.ToString("F1")) + " متر";
                             }
                         };
                         saleForm.ShowDialog();
